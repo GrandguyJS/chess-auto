@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if path %}
+    <div class="site">
+        <div class="board">
+            <img src="{{path}}" alt="img" id="board">
+        </div>
+        <div class="move">
+            <form action="/move" method="post">
+                <input type="text" name="move" placeholder="move">
+                <input type="submit">
+            </form>
+            <form action="/video" method="post">
+                <input type="range" name="duration" placeholder="duration">
+                <input type="submit">
+            </form>
+        </div>
+
+    </div>
+
+    {% endif %}
+</body>
+</html>
